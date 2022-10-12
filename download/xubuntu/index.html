@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주분투 다운로드</title>
+    <!--Load CSS-->
+    <!--Load uikit CSS-->
+    <link rel="stylesheet" href="../../src/uikit/css/uikit.min.css" />
+    <!--Load Page CSS-->
+    <link rel="stylesheet" href="../../src/css/download_xubuntu.css" />
+    <!--Load Calculate Date Script-->
+    <script src="../../src/js/calc_diff_date.js"></script>
+</head>
+<body>
+    <!--Contents Body-->
+    <div id="contents_body">
+        <div id="title">
+            <h2><img id="logo_img" src="../../xubuntu/assets/img/logo/PNG/xubuntu_logo_black.png" />주분투 다운로드</h2>
+            <p>주분투를 다운로드 받을 수 있습니다.</p>
+        </div>
+        <hr />
+        <!--Alert-->
+        <div class="uk-alert-primary" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><span class="uk-margin-small-right" uk-icon="warning"></span> LTS 버전만 제공합니다.</p>
+        </div>
+        <!--Download List-->
+        <div id="download_list" class="uk-overflow-auto">
+            <table id="download_list_table" class="uk-table uk-table-striped uk-table-responsive uk-table-hover">
+                <thead>
+                    <tr>
+                        <th>버전</th>
+                        <th>릴리즈 날짜</th>
+                        <th>지원 종료일</th>
+                        <th>서버 등록일</th>
+                        <th>다운로드 수</th>
+                        <th>다운로드</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>주분투 22.04 "Jammy Jellyfish"(LTS)</td>
+                        <td>2022년 04월 21일(<script>if(date_diff_indays('2022/04/21', year+"/"+month+"/"+date)>-1){document.write(date_diff_indays('2022/04/21', year+"/"+month+"/"+date)+"일 전")}else {document.write(Math.abs(date_diff_indays('2022/04/21', year+"/"+month+"/"+date))+"일 후")}</script>)</td>
+                        <td>2025년 04월 24일(<script>if(date_diff_indays('2025/04/24', year+"/"+month+"/"+date)>-1){document.write(date_diff_indays('2025/04/24', year+"/"+month+"/"+date)+"일 전")}else {document.write(Math.abs(date_diff_indays('2025/04/24', year+"/"+month+"/"+date))+"일 후")}</script>)</td>
+                        <td>2022년 11월 01일(<script>if(date_diff_indays('2022/11/01', year+"/"+month+"/"+date)>-1){document.write(date_diff_indays('2022/11/01', year+"/"+month+"/"+date)+"일 전")}else {document.write(Math.abs(date_diff_indays('2022/11/01', year+"/"+month+"/"+date))+"일 후")}</script>)</td>
+                        <td>Table Data</td>
+                        <td><button class="uk-button uk-button-primary">다운로드</button></td>
+                    </tr>
+                    <tr>
+                        <td>주분투 20.04 "Focal Fossa"(LTS)</td>
+                        <td>2020년 04월 23일(<script>if(date_diff_indays('2020/04/23', year+"/"+month+"/"+date)>-1){document.write(date_diff_indays('2020/04/23', year+"/"+month+"/"+date)+"일 전")}else {document.write(Math.abs(date_diff_indays('2020/04/23', year+"/"+month+"/"+date))+"일 후")}</script>)</td>
+                        <td>2023년 04월 29일(<script>if(date_diff_indays('2023/04/29', year+"/"+month+"/"+date)>-1){document.write(date_diff_indays('2023/04/29', year+"/"+month+"/"+date)+"일 전")}else {document.write(Math.abs(date_diff_indays('2023/04/29', year+"/"+month+"/"+date))+"일 후")}</script>)</td>
+                        <td>2022년 11월 01일(<script>if(date_diff_indays('2022/11/01', year+"/"+month+"/"+date)>-1){document.write(date_diff_indays('2022/11/01', year+"/"+month+"/"+date)+"일 전")}else {document.write(Math.abs(date_diff_indays('2022/11/01', year+"/"+month+"/"+date))+"일 후")}</script>)</td>
+                        <td>Table Data</td>
+                        <td><button class="uk-button uk-button-primary">다운로드</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--Load Scripts-->
+    <!--Load uikit JS-->
+    <script src="../../src/uikit/js/uikit.min.js"></script>
+    <!--Load uikit icon JS-->
+    <script src="../../src/uikit/js/uikit-icons.min.js"></script>
+</body>
+</html>
