@@ -1,190 +1,510 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우이하루 네트워크 - 홈</title>
-    <!--Load CSS-->
-    <!--Load uikit CSS-->
-    <link rel="stylesheet" href="./src/uikit/css/uikit.min.css" />
-    <!--Load Page CSS-->
-    <link rel="stylesheet" href="./src/css/main_page.css" />
-    <!--Load jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Load server time js-->
-    <script src="./src/js/server_time.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>학원도시 - 우이하루 프로젝트</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="src/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
+    <!--Load Google Chart Script-->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+              // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawChart() {
+
+  // Create the data table.
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Topping');
+  data.addColumn('number', 'Slices');
+  data.addRows([
+    ['운영체제', 7],
+    ['자바스크립트', 10],
+    ['CSS', 10]
+  ]);
+
+  // Set chart options
+  var options = {
+    chartArea: {
+      left: 40,
+      width: '100%'
+    },
+    legend: {
+      position: 'top'
+    },
+        'title':'우이하루가 가지고 있는 자료 종류들',
+        'width':'100%',
+        'height':'100%'};
+
+  // Instantiate and draw our chart, passing in some options.
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+    </script>
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>
-<body>
-    <!--Contents Body-->
-    <div id="contents_body">
-        <!--NavBar-->
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-left left_menu">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#" class="menu_text_big">
-                        <div class="inner">
-                            <div id="logo">
-                                <img id="logo_img" src="./res/imgs/logo/uiharu_network_logo.png" />
-                            </div>
-                            <div>
-                                <span id="logo_text">우이하루 네트워크</span>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-text mx-3">우이하루 프로젝트</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - 개요 -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>개요</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                <p>통계/정보</p>
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>정보</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">우이하루 프로젝트에 대한 정보</h6>
+                        <a class="collapse-item" href="download_list.html">다운로드 가능한 요소</a>
+                        <a class="collapse-item" href="cards.html">통계</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Colors</a>
+                        <a class="collapse-item" href="utilities-border.html">Borders</a>
+                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">개요</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-pen fa-sm text-white-50"></i> 오류 리포트</a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Available Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                이용 가능
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">7개</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-check fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </a></li>
-                    <li class="uk-active"><a href="https://github.com/gaon12/uiharu" target="_blank"><span class="uk-margin-small-right next-menu" uk-icon="github"></span>깃허브 저장소</a></li>
-                    <li class="uk-active"><a href="#"><span class="uk-margin-small-right" uk-icon="comments"></span>게시판</a></li>
-                </ul>
-            </div>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav right_menu">
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="form-horizontal-select">Select your language</label>
-                        <div class="uk-form-controls">
-                            <select class="uk-select" id="form-horizontal-select" onchange="if(this.value) location.href=(this.value);">
-                                <option value="./index.html">한국어</option>
-                                <option value="./index_en.html">English</option>
-                            </select>
+
+                        <!-- Sync Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                동기화 중
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0개</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-sync fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Error Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                오류
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0개</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-times fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notice Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                공지사항
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="https://board.uiharu.gaon.xyz" target="_blank">공지 확인하기!</a></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </ul>
+
+                    <!--Alert-->
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <i class="fas fa-exclamation-circle"></i> 우이하루는 지금 베타 서비스에요! 우이하루가 더 열심히 노력할게요!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- 서버/사용자 정보 -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">서버 정보/사용자 정보</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div id="server_info">
+                                        <h2>서버 정보</h2>
+                                        <!--서버 위치-->
+                                        <details>
+                                            <summary>서버 위치</summary>
+                                            <ul>
+                                                <p>Oracle Cloud South Korea Central (Seoul)</p>
+                                            </ul>
+                                        </details>
+                                        <!--서버 사양-->
+                                        <details>
+                                            <summary>서버 사양</summary>
+                                            <ul>
+                                                <li>ARM 서버(3코어)</li>
+                                                <li>RAM 17GiB</li>
+                                                <li>HDD 166GB</li>
+                                            </ul>
+                                        </details>
+                                    </div>
+                                    <hr />
+                                    <div id="user_info">
+                                        <h2>사용자 정보<span style="font-size: 15px;">(서버에 저장되지 않습니다.)</span></h2>
+                                        <!--유저 에이전트-->
+                                        <details>
+                                            <summary>유저 에이전트</summary>
+                                            <ul>
+                                                <p><script>document.write(navigator.userAgent);</script></p>
+                                            </ul>
+                                        </details>
+                                        <!--유저 에이전트-->
+                                        <details>
+                                            <summary>사용자 언어</summary>
+                                            <ul>
+                                                <p><script>document.write(window.navigator.language);</script></p>
+                                            </ul>
+                                        </details>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">자료 종류</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <div id="chart_div" style="margin-top: -30px;"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- status Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">현재 상태</h6>
+                                </div>
+                                <div class="card-body">
+                                    <details>
+                                        <summary class="small font-weight-bold">
+                                            운영체제 <span class="float-right">8/8 (100%)</span>
+                                            <div class="progress mb-4">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </summary>
+                                        <ul>
+                                            <!--주분투-->
+                                            <h4 class="small font-weight-bold">주분투 <span class="float-right">2/2 (100%)</span></h4>
+                                            <div class="progress mb-4">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <!--루분투-->
+                                            <h4 class="small font-weight-bold">루분투 <span class="float-right">1/1 (100%)</span></h4>
+                                            <div class="progress mb-4">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <!--라즈베리파이 OS-->
+                                            <h4 class="small font-weight-bold">라즈베리파이 OS <span class="float-right">5/5 (100%)</span></h4>
+                                            <div class="progress mb-4">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </ul>
+                                    </details>
+                                    
+                                    <h4 class="small font-weight-bold">준비중 <span class="float-right">-</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">준비중 <span class="float-right">-</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- 공지사항/트위터 -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
+                                </div>
+                                <div class="card-body">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">공지사항</button>
+                                          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">트위터</button>
+                                        </div>
+                                      </nav>
+                                      <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                                            <iframe src="https://example.com/" width="100%" height="500px" frameborder="0"></iframe>
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                                            <a class="twitter-timeline" href="https://twitter.com/uiharu_network">우이하루의 트위터</a> <script async src="src/js/twitter_widgets.js" charset="utf-8"></script>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
             </div>
-        </nav>
-        <!--End NavBar-->
-        <!--Alert-->
-        <div id="alerts">
-            <!--Alert-->
-            <div class="uk-alert-primary" uk-alert>
-                <a class="uk-alert-close" uk-close></a>
-                <p><span uk-icon="warning"></span> 현재 베타 서비스로 진행되고 있어요. 우이하루가 조금 더 열심히 노력해 정식 서비스로 될 수 있도록 노력해 볼게요!</p>
-            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>우이하루 프로젝트는 MIT 라이선스에요! <a href="https://github.com/gaon12/uiharu" target="_blank"><i class="fab fa-github-alt"></i> 깃허브 저장소</a>를 확인하세요!</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
         </div>
-        <!--Main Contents-->
-        <div id="main_contents">
-            <!--Title-->
-            <div id="intro_card" class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-                <div class="uk-card-title">
-                    <h1>우이하루 네트워크</h1>
-                    <p class="uk-text-lead">우이하루 네트워크는 파일이 외국에 있어 다운로드 속도가 느린 파일을 빠르게 다운로드 할 수 있는 미러 사이트에요!</p>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
                 </div>
-            </div>
-            <!--Twitter Card-->
-            <div id="twitter_card" class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-                <div class="uk-card-title">
-                    <h1>우이하루 소식</h1>
-                </div>
-                    <div class="tabs">
-                        <input id="all" type="radio" name="tab_item" checked>
-                        <label class="tab_item" for="all">공지사항</label>
-                        <input id="twitter" type="radio" name="tab_item">
-                        <label class="tab_item" for="twitter">트위터 소식</label>
-                        <input id="design" type="radio" name="tab_item">
-                        <label class="tab_item" for="design">서버 정보</label>
-                        <div class="tab_content" id="all_content">
-                            <iframe id="notice_board" src="https://www.gaon.xyz" frameborder="0"></iframe>
-                        </div>
-                        <div class="tab_content" id="twitter_content">
-                            <a class="twitter-timeline" href="https://twitter.com/uiharu_network">우이하루의 트위터</a> <script async src="./src/js/twitter_widgets.js" charset="utf-8"></script>
-                        </div>
-                        <div class="tab_content" id="design_content">
-                            <h2 class="uk-heading-bullet">서버 정보</h2>
-                            <!--서버 위치-->
-                            <details>
-                                <summary>서버 위치</summary>
-                                <p>Oracle Cloud South Korea Central (Seoul)</p>
-                            </details>
-                            <!--서버 사양-->
-                            <details>
-                                <summary>서버 사양</summary>
-                                <ul>
-                                    <li>ARM 서버(3코어)</li>
-                                    <li>RAM 17GiB</li>
-                                    <li>HDD 166GB</li>
-                                </ul>
-                            </details>
-                            <!--서버 시간-->
-                            <details>
-                                <summary>서버 시간</summary>
-                                <ul>
-                                    <li>서버 시간 : <span id="serverTime"></span></li>
-                                    <li>로컬 시간 : <span id="localTime"></span></li>
-                                </ul>
-                            </details>
-                        </div>
-                </div>
-            </div>
-
-            <!--Packages-->
-            <div id="package_stats_card" class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-                <div class="uk-card-title">
-                    <h1>패키지</h1>
-                    <p class="uk-text-lead">우이하루 네트워크에 있는 패키지 목록이에요!</p>
-                    <!--패키지 현황 표-->
-                    <div id="package_stats">
-                        <table id="package_stats_table">
-                            <thead>
-                              <tr>
-                                <th>7</th>
-                                <th>0</th>
-                                <th>0</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td><span id="package_available" uk-icon="icon: check;"></span>사용 가능</td>
-                                <td><span id="package_fail" uk-icon="icon: close;"></span>사용 불가능</td>
-                                <td><span id="package_sync" uk-icon="icon: refresh;"></span>동기화 중</td>
-                              </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--Package Filter-->
-                    <div uk-filter="target: .js-filter">
-
-                        <div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid>
-                            <div>
-                                <ul class="uk-subnav uk-subnav-pill" uk-margin>
-                                    <li class="uk-active" uk-filter-control><a href="#">All</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul class="uk-subnav uk-subnav-pill" uk-margin>
-                                    <li uk-filter-control="[data-color='os']"><a href="#">운영체제</a></li>
-                                    <li uk-filter-control="[data-color='blue']"><a href="#">준비중</a></li>
-                                    <li uk-filter-control="[data-color='black']"><a href="#">준비중2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    
-                        <ul class="js-filter uk-child-width-1-2 uk-child-width-1-3@m uk-text-center" uk-grid="masonry: true">
-                            <li data-color="os" data-size="large">
-                                <div class="uk-card uk-card-default uk-card-body">
-                                    <canvas width="600" height="400"></canvas>
-                                    <div class="uk-position-center">라즈베리파이 OS</div>
-                                </div>
-                            </li>
-                            <li data-color="os" data-size="medium">
-                                <div class="uk-card uk-card-default uk-card-body">
-                                    <canvas width="600" height="400"></canvas>
-                                    <div class="uk-position-center">루분투(Lubuntu)</div>
-                                </div>
-                            </li>
-                            <li data-color="os" data-size="small">
-                                <div class="uk-card uk-card-default uk-card-body">
-                                    <canvas width="600" height="400"></canvas>
-                                    <div class="uk-position-center"><a href="./xubuntu/index.html">주분투(Xubuntu)</a></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-    <!--Load Scripts-->
-    <!--Load uikit JS-->
-    <script src="./src/uikit/js/uikit.min.js"></script>
-    <!--Load uikit icon JS-->
-    <script src="./src/uikit/js/uikit-icons.min.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--Bootstrap 4-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
 </body>
+
 </html>
