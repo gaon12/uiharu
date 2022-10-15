@@ -148,18 +148,26 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="intro.html" style="color: #000000;"><i class="fa-solid fa-circle-info"></i> &nbsp; 소개</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="https://github.com/gaon12/uiharu" target="_blank" style="color: #000000;"><i class="fa-brands fa-github"></i> &nbsp; 깃허브</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i> &nbsp; 라이선스</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="https://board.uiharu.gaon.xyz/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i> &nbsp; 공지사항</a>
-                        </li>
+                        <div id="menu_intro">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="intro.html" style="color: #000000;"><i class="fa-solid fa-circle-info"></i> &nbsp; 소개</a>
+                            </li>
+                        </div>
+                        <div id="menu_github">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="https://github.com/gaon12/uiharu" target="_blank" style="color: #000000;"><i class="fa-brands fa-github"></i> &nbsp; 깃허브</a>
+                            </li>
+                        </div>
+                        <div id="menu_license">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i> &nbsp; 라이선스</a>
+                            </li>
+                        </div>
+                        <div id="menu_notice">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="https://board.uiharu.gaon.xyz/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i> &nbsp; 공지사항</a>
+                            </li>
+                        </div>
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
@@ -185,7 +193,7 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 이용 가능
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">7개</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">8개</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa-solid fa-check fa-2x text-gray-300"></i>
@@ -258,10 +266,11 @@
                     </div>
 
                     <!--Alert-->
+                    <!--Beta Service-->
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <i class="fas fa-exclamation-circle"></i> 우이하루는 지금 베타 서비스에요! 우이하루가 더 열심히 노력할게요!
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
+                    </div>
 
                     <!-- Content Row -->
 
@@ -514,6 +523,26 @@ position: 'top'
 var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 chart.draw(data, options);
 }
+</script>
+
+<!--브라우저 크기에 따라 메뉴 변경-->
+<script>
+    window.onload=function(){
+        if(window.innerWidth < 530) {
+    const menu_intro = document.getElementById('menu_intro');
+    menu_intro.innerHTML =
+        '<li class="nav-item"><a class="nav-link active" aria-current="page" href="intro.html" style="color: #000000;"><i class="fa-solid fa-circle-info"></i></a></li>';
+    const menu_github = document.getElementById('menu_github');
+    menu_github.innerHTML =
+        '<li class="nav-item"><a class="nav-link active" aria-current="page" href="https://github.com/gaon12/uiharu" target="_blank" style="color: #000000;"><i class="fa-brands fa-github"></i></a></li>'
+    const menu_license = document.getElementById('menu_license');
+    menu_license.innerHTML =
+        '<li class="nav-item"><a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i></a></li>'
+    const menu_notice = document.getElementById('menu_notice');
+    menu_notice.innerHTML =
+        '<li class="nav-item"><a class="nav-link active" aria-current="page" href="https://board.uiharu.gaon.xyz/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i></a></li>'
+}
+    }
 </script>
 
 </body>
