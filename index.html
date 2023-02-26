@@ -334,16 +334,18 @@
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">속도 측정</h6>
-                                    <p>우이하루 서버와 사용자 PC와의 속도와 핑을 확인할 수 있습니다.</p>
-                                    <p>100MB의 임시 파일을 다운로드 받는데 걸리는 시간을 측정합니다. 측정 완료 후 자동으로 삭제됩니다. 측정을 원한다면 100MB의 용량이 필요합니다.</p>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <button type="button" onclick="startDownload()">다운로드 시작</button>
+                                    <p>우이하루 서버와 사용자 PC와의 속도와 핑을 확인할 수 있습니다.</p>
+                                    <p>100MB의 임시 파일을 다운로드 받는데 걸리는 시간을 측정합니다. 측정 완료 후 자동으로 삭제됩니다. 측정을 원한다면 100MB의 용량이 필요합니다.</p>
+                                    <hr style="border-top: 3px solid gray;"/>
+                                    <button type="button" class="btn btn-primary" onclick="startDownload()" style="margin-bottom: 20px;" id="download_start">다운로드 시작</button>
                                     <p>다운로드 시간: <span id="elapsed-time"></span>초</p>
                                     <p>다운로드 속도: <span id="download-speed"></span>Mbps</p>
-                                    <p><span id="ping_result"></span>ms</p>
+                                    <p>핑 측정: <span id="ping_result"></span>ms</p>
                                 </div>
+                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                                 <script>
                                     /*
                                       다운로드를 시작하기 위해 "다운로드 시작" 버튼을 누릅니다. 버튼 클릭 이벤트가 발생하면 startDownload() 함수가 호출됩니다. 이 함수는 XMLHttpRequest 객체를 생성하여 다운로드를 시작합니다.
@@ -358,26 +360,37 @@
                                       * responseType 속성을 blob으로 설정
                                       * onload 함수를 등록하여 다운로드가 완료되면 호출되도록 함
                                   */
-                                    function startPing() {
-                                    var url = document.getElementById("url").value;
-                                    var resultElement = document.getElementById("ping_result");
-
-                                    intervalId = setInterval(function() {
-                                    var startTime = (new Date()).getTime();
-                                    var xhr = new XMLHttpRequest();
-                                    xhr.open("GET", url, true);
-                                    xhr.onreadystatechange = function() {
-                                        if (xhr.readyState == 4) {
-                                        var endTime = (new Date()).getTime();
-                                        var pingTime = endTime - startTime;
-                                        resultElement.innerHTML = "현재 서버(" + url + ")와의 핑: " + pingTime;
-                                        }
-                                    };
-                                    xhr.send();
-                                    }, 1000);
+                                 //숫자 세자리 마다 콤마 찍기
+                                 function addCommas(number) {
+                                    // 세 자리마다 콤마를 추가하기 위한 정규식을 사용하여 문자열로 변환
+                                    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                                 }
+
+                                    function startPing() {
+                                        var xhr = new XMLHttpRequest();
+                                        var start = new Date().getTime();
+                                        xhr.open("GET", "https://uiharu.gaon.xyz/100MB_test.testfile"); // 요청 URL을 "/"로 설정
+                                        xhr.onreadystatechange = function() {
+                                            if (xhr.readyState == 4) {
+                                            var end = new Date().getTime();
+                                            var latency = end - start;
+                                            // 결과를 ping_result라는 id를 가진 span 요소에 출력
+                                            document.getElementById("ping_result").textContent = addCommas(latency);
+                                            }
+                                        };
+                                        xhr.send();
+                                        }
+                                        
                                     function startDownload() {
-                                        startPing();
+                                        //버튼 비활성화
+                                        var download_btn = document.getElementById("download_start");
+                                        download_btn.disabled = true;
+                                        download_btn.innerText = "재측정은 새로고침 후 다시 시도해주세요.";
+                                        Swal.fire(
+                                            '실행 성공!',
+                                            '잠시 후 결과가 나옵니다.',
+                                            'success'
+                                        )
                                         var url = "https://uiharu.gaon.xyz/100MB_test.testfile"; // 다운로드할 파일의 URL
                                         var chunkSize = 1024 * 1024 * 100; // 한 번에 읽어올 데이터 크기 (100MB)
                                         var start = performance.now(); // 다운로드 시작 시간
@@ -389,10 +402,8 @@
                                             var end = performance.now(); // 다운로드 종료 시간
                                             var elapsed = (end - start) / 1000; // 다운로드에 걸린 시간 (초 단위)
                                             var downloadSpeed = (chunkSize / elapsed / 1024 / 1024) * 8; // 다운로드 속도 (Mbps 단위)
-                                            document.getElementById("elapsed-time").textContent =
-                                            elapsed.toFixed(2);
-                                            document.getElementById("download-speed").textContent =
-                                            downloadSpeed.toFixed(2);
+                                            document.getElementById("elapsed-time").textContent = addCommas(elapsed.toFixed(2));
+                                            document.getElementById("download-speed").textContent = addCommas(downloadSpeed.toFixed(2));
                               
                                         // 다운로드 완료 후 파일과 캐시 삭제
                                         /*
@@ -407,6 +418,7 @@
                                         document.body.removeChild(iframe);
                                       };
                                       xhr.send();
+                                        setInterval(startPing, 1000); // 1초마다 ping 함수를 호출
                                     }
                                   </script>
                             </div>
@@ -554,55 +566,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
-    <!--Google Chart-->
-    <script>
-        // Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart']});
-
-// Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(drawChart);
-
-// Callback that creates and populates a data table,
-// instantiates the pie chart, passes in the data and
-// draws it.
-function drawChart() {
-
-// Create the data table.
-var data = new google.visualization.DataTable();
-data.addColumn('string', '종류');
-data.addColumn('number', '갯수');
-data.addRows([
-['운영체제', 7],
-['자바스크립트', 10],
-['CSS', 10]
-]);
-
-// Set chart options
-var options = {
-chartArea: {
-left: 40,
-width: '100%'
-},
-legend: {
-position: 'top'
-},
-  'title':'우이하루가 가지고 있는 자료 종류들',
-  'width':'100%',
-  'height':'100%'};
-
-// Instantiate and draw our chart, passing in some options.
-var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-chart.draw(data, options);
-}
-</script>
 
 <!--브라우저 크기에 따라 메뉴 변경-->
 <script>
