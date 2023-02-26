@@ -338,7 +338,8 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <p>우이하루 서버와 사용자 PC와의 속도와 핑을 확인할 수 있습니다.</p>
-                                    <p>100MB의 임시 파일을 다운로드 받는데 걸리는 시간을 측정합니다. 측정 완료 후 자동으로 삭제됩니다. 측정을 원한다면 100MB의 용량이 필요합니다.</p>
+                                    <p>30MB의 임시 파일을 다운로드 받는데 걸리는 시간을 측정합니다. 측정 완료 후 자동으로 삭제됩니다. 측정을 원한다면 30MB의 용량이 필요합니다.</p>
+                                    <p>측정 초기에는 핑이 높게 나올 수 있습니다. 파일 다운로드가 완료되면, 정상적으로 나옵니다.</p>
                                     <hr style="border-top: 3px solid gray;"/>
                                     <button type="button" class="btn btn-primary" onclick="startDownload()" style="margin-bottom: 20px;" id="download_start">다운로드 시작</button>
                                     <p>다운로드 시간: <span id="elapsed-time"></span>초</p>
@@ -391,8 +392,8 @@
                                             '잠시 후 결과가 나옵니다.',
                                             'success'
                                         )
-                                        var url = "https://uiharu.gaon.xyz/100MB_test.testfile"; // 다운로드할 파일의 URL
-                                        var chunkSize = 1024 * 1024 * 100; // 한 번에 읽어올 데이터 크기 (100MB)
+                                        var url = "https://uiharu.gaon.xyz/30MBtest.testfile"; // 다운로드할 파일의 URL
+                                        var chunkSize = 1024 * 1024 * 30; // 한 번에 읽어올 데이터 크기 (30MB)
                                         var start = performance.now(); // 다운로드 시작 시간
                                         var xhr = new XMLHttpRequest();
                                         xhr.open("GET", url, true);
