@@ -6,7 +6,7 @@ if(lang == "ko-KR" || lang == "ko") {
     var menu_overview = "개요";
     var menu_statistics = "통계/정보";
     var menu_infos = "정보";
-    var menu_project_info = "우이하루 프로젝트에 대한 정보";
+    var menu_project_info = "우이하루 프로젝트 정보";
     var menu_downloadable = "다운로드 가능한 요소";
     var menu_timeline = "타임라인 / 로드맵";
     var menu_intro = "소개";
@@ -41,7 +41,7 @@ else {
     var menu_overview = "Overview";
     var menu_statistics = "Statistics/Info";
     var menu_infos = "Info";
-    var menu_project_info = "Information about the Uiharu project";
+    var menu_project_info = "Info about the Uiharu project";
     var menu_downloadable = "Downloadable elements";
     var menu_timeline = "Timeline / Roadmap";
     var menu_intro = "Introduction";
