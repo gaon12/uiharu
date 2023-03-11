@@ -1,6 +1,6 @@
 let lang = navigator.language;
 
-if(lang == "ko-KR") {
+if(lang == "ko-KR" || lang == "ko") {
     //Menu
     var menu_title = "우이하루 프로젝트";
     var menu_overview = "개요";
