@@ -7,7 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>학원도시 - 우이하루 프로젝트</title>
+    <!--Load Language JS-->
+    <script src="./js/languages.js"></script>
+    <script>document.title = menu_title;</script>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
@@ -40,7 +42,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>개요</span></a>
+                    <span><script>document.write(menu_overview);</script></span></a>
             </li>
 
             <!-- Divider -->
@@ -48,7 +50,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                <p>통계/정보</p>
+                <p><script>document.write(menu_statistics);</script></p>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -56,86 +58,16 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>정보</span>
+                    <span><script>document.write(menu_infos);</script></span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">우이하루 프로젝트에 대한 정보</h6>
-                        <a class="collapse-item" href="download_list.html">다운로드 가능한 요소</a>
-                        <a class="collapse-item" href="history_roadmap.html">타임라인 / 로드맵</a>
+                        <h6 class="collapse-header"><script>document.write(menu_project_info);</script></h6>
+                        <a class="collapse-item" href="download_list.html"><script>document.write(menu_downloadable);</script></a>
+                        <a class="collapse-item" href="history_roadmap.html"><script>document.write(menu_timeline);</script></a>
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
         </ul>
         <!-- End of Sidebar -->
 
@@ -150,22 +82,22 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <div id="menu_intro">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="intro.html" style="color: #000000;"><i class="fa-solid fa-circle-info"></i> &nbsp; 소개</a>
+                                <a class="nav-link active" aria-current="page" href="intro.html" style="color: #000000;"><i class="fa-solid fa-circle-info"></i> &nbsp; <script>document.write(menu_intro);</script></a>
                             </li>
                         </div>
                         <div id="menu_github">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="https://github.com/gaon12/uiharu" target="_blank" style="color: #000000;"><i class="fa-brands fa-github"></i> &nbsp; 깃허브</a>
+                                <a class="nav-link active" aria-current="page" href="https://github.com/gaon12/uiharu" target="_blank" style="color: #000000;"><i class="fa-brands fa-github"></i> &nbsp; <script>document.write(menu_github);</script></a>
                             </li>
                         </div>
                         <div id="menu_license">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i> &nbsp; 라이선스</a>
+                                <a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i> &nbsp; <script>document.write(menu_license);</script></a>
                             </li>
                         </div>
                         <div id="menu_notice">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="https://board.uiharu.gaon.xyz/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i> &nbsp; 공지사항</a>
+                                <a class="nav-link active" aria-current="page" href="https://board.uiharu.dev/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i> &nbsp; <script>document.write(menu_notice);</script></a>
                             </li>
                         </div>
                     </ul>
@@ -178,7 +110,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">개요</h1>
-                        <a href="https://board.uiharu.gaon.xyz/issues" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i class="fas fa-pen fa-sm text-white-50"></i> 오류 리포트</a>
+                        <a href="https://board.uiharu.dev/issues" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i class="fas fa-pen fa-sm text-white-50"></i> 오류 리포트</a>
                     </div>
 
                     <!-- Content Row -->
@@ -254,7 +186,7 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 공지사항
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="https://board.uiharu.gaon.xyz" target="_blank">공지 확인하기!</a></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="https://board.uiharu.dev" target="_blank">공지 확인하기!</a></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -370,7 +302,7 @@
                                     function startPing() {
                                         var xhr = new XMLHttpRequest();
                                         var start = new Date().getTime();
-                                        xhr.open("GET", "https://uiharu.gaon.xyz/100MB_test.testfile"); // 요청 URL을 "/"로 설정
+                                        xhr.open("GET", "https://uiharu.dev/100MB_test.testfile"); // 요청 URL을 "/"로 설정
                                         xhr.onreadystatechange = function() {
                                             if (xhr.readyState == 4) {
                                             var end = new Date().getTime();
@@ -392,7 +324,7 @@
                                             '잠시 후 결과가 나옵니다.',
                                             'success'
                                         )
-                                        var url = "https://uiharu.gaon.xyz/30MBtest.testfile"; // 다운로드할 파일의 URL
+                                        var url = "https://uiharu.dev/30MBtest.testfile"; // 다운로드할 파일의 URL
                                         var chunkSize = 1024 * 1024 * 30; // 한 번에 읽어올 데이터 크기 (30MB)
                                         var start = performance.now(); // 다운로드 시작 시간
                                         var xhr = new XMLHttpRequest();
@@ -523,7 +455,7 @@
                                       </nav>
                                       <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                                            <iframe src="https://board.uiharu.gaon.xyz/notice/" width="100%" height="500px" frameborder="0"></iframe>
+                                            <iframe src="https://board.uiharu.dev/notice/" width="100%" height="500px" frameborder="0"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                                             <a class="twitter-timeline" href="https://twitter.com/uiharu_network">우이하루의 트위터</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -583,7 +515,7 @@
         '<li class="nav-item"><a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i></a></li>'
     const menu_notice = document.getElementById('menu_notice');
     menu_notice.innerHTML =
-        '<li class="nav-item"><a class="nav-link active" aria-current="page" href="https://board.uiharu.gaon.xyz/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i></a></li>'
+        '<li class="nav-item"><a class="nav-link active" aria-current="page" href="https://board.uiharu.dev/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i></a></li>'
 }
     }
 </script>

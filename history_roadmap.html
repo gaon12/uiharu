@@ -6,13 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>SB Admin 2 - Blank</title>
-		<!-- Custom fonts for this template-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-		<script src="src/js/fontawesome_6.2.0_all.min.js"></script>
-		<link
-			href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-			rel="stylesheet">
+        <!--Load Language JS-->
+        <script src="./js/languages.js"></script>
+        <script>document.title = timeline_title + " - " + menu_title;</script>
+		<!-- Custom fonts for this template -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <script src="src/js/fontawesome_6.2.0_all.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 		<!-- Custom styles for this template-->
 		<link href="css/sb-admin-2.min.css" rel="stylesheet">
 		<link href="src/css/timeline.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-text mx-3">우이하루 프로젝트</div>
+                <div class="sidebar-brand-text mx-3"><script>document.write(menu_title);</script></div>
             </a>
 
             <!-- Divider -->
@@ -36,7 +36,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>개요</span></a>
+                    <span><script>document.write(menu_overview);</script></span></a>
             </li>
 
             <!-- Divider -->
@@ -44,7 +44,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                <p>통계/정보</p>
+                <p><script>document.write(menu_statistics);</script></p>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -52,86 +52,16 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>정보</span>
+                    <span><script>document.write(menu_infos);</script></span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">우이하루 프로젝트에 대한 정보</h6>
-                        <a class="collapse-item" href="download_list.html">다운로드 가능한 요소</a>
-                        <a class="collapse-item" href="history_roadmap.html" style="color: #4e73e3;"><b>- 타임라인 / 로드맵</b></a>
+                        <h6 class="collapse-header"><script>document.write(menu_project_info);</script></h6>
+                        <a class="collapse-item" href="download_list.html"><script>document.write(menu_downloadable);</script></a>
+                        <a class="collapse-item" href="history_roadmap.html" style="color: #4e73e3;"><b>- <script>document.write(menu_timeline);</script></b></a>
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
         </ul>
         <!-- End of Sidebar -->
 
@@ -146,22 +76,22 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <div id="menu_intro">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="intro.html" style="color: #000000;"><i class="fa-solid fa-circle-info"></i> &nbsp; 소개</a>
+                                <a class="nav-link active" aria-current="page" href="intro.html" style="color: #000000;"><i class="fa-solid fa-circle-info"></i> &nbsp; <script>document.write(menu_intro);</script></a>
                             </li>
                         </div>
                         <div id="menu_github">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="https://github.com/gaon12/uiharu" target="_blank" style="color: #000000;"><i class="fa-brands fa-github"></i> &nbsp; 깃허브</a>
+                                <a class="nav-link active" aria-current="page" href="https://github.com/gaon12/uiharu" target="_blank" style="color: #000000;"><i class="fa-brands fa-github"></i> &nbsp; <script>document.write(menu_github);</script></a>
                             </li>
                         </div>
                         <div id="menu_license">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i> &nbsp; 라이선스</a>
+                                <a class="nav-link active" aria-current="page" href="license.html" style="color: #000000;"><i class="fa-solid fa-circle-exclamation"></i> &nbsp; <script>document.write(menu_license);</script></a>
                             </li>
                         </div>
                         <div id="menu_notice">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="https://board.uiharu.gaon.xyz/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i> &nbsp; 공지사항</a>
+                                <a class="nav-link active" aria-current="page" href="https://board.uiharu.dev/notice" target="_blank" style="color: #000000;"><i class="fa-solid fa-flag"></i> &nbsp; <script>document.write(menu_notice);</script></a>
                             </li>
                         </div>
                     </ul>
@@ -170,26 +100,44 @@
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800">타임라인 / 로드맵</h1>
-					<p>우이하루가 프로젝트의 타임라인과 로드맵을 알려드릴게요!</p>
+					<h1 class="h3 mb-4 text-gray-800"><script>document.write(timeline_title);</script></h1>
+					<p><script>document.write(timeline_subtitle);</script></p>
 					<!--Show timeline-->
 					<div id="timeline" style="border-style: solid; border-color: black; border-radius: 20px;">
-						<h2>우이하루가 지나온 발자취, 앞으로 나아갈 로드맵</h2>
+						<h2><script>document.write(timeline_slogun);</script></h2>
+
+                        <div class="timeline__event animated fadeInUp delay-3s timeline__event--type1">
+                            <div class="timeline__event__icon">
+                                <i class="lni-slim"></i>
+                            </div>
+                            <div class="timeline__event__date">
+                                2023-11-01
+                            </div>
+                            <div class="timeline__event__content">
+                                <div class="timeline__event__title">
+                                    <script>document.write(timeline_0004_title);</script>
+                                </div>
+                                <div class="timeline__event__description">
+                                    <p><script>document.write(timeline_0004_content);</script></p>
+                                </div>
+                            </div>
+                        </div>
+
 						<div class="timeline">
 							<div class="timeline__event animated fadeInUp delay-2s timeline__event--type1">
 								<div class="timeline__event__icon ">
 									<i class="lni-cake"></i>
 								</div>
 								<div class="timeline__event__date">
-									2023-11-01
+									2023-03-11
 								</div>
 								<div class="timeline__event__content ">
 									<div class="timeline__event__title">
-										우이하루 1주년!(예정)
-									</div>
-									<div class="timeline__event__description">
-										<p>1주년까지 갈 수 있도록 여러분의 도움과 관심이 필요해요!</p>
-									</div>
+                                        <script>document.write(timeline_0003_title);</script>
+                                    </div>
+                                    <div class="timeline__event__description">
+                                        <p><script>document.write(timeline_0003_content);</script></p>
+                                    </div>
 								</div>
 							</div>
 
@@ -202,11 +150,11 @@
 								</div>
 								<div class="timeline__event__content">
 									<div class="timeline__event__title">
-										우이하루 서비스 시작!
-									</div>
-									<div class="timeline__event__description">
-										<p>우이하루 서비스를 시작했어요!</p>
-									</div>
+                                        <script>document.write(timeline_0002_title);</script>
+                                    </div>
+                                    <div class="timeline__event__description">
+                                        <p><script>document.write(timeline_0002_content);</script></p>
+                                    </div>
 								</div>
 							</div>
 
@@ -219,11 +167,11 @@
 								</div>
 								<div class="timeline__event__content">
 									<div class="timeline__event__title">
-										우이하루 프로젝트 시작
-									</div>
-									<div class="timeline__event__description">
-										<p>우이하루 프로젝트가 시작했어요! 많이 부족하지만, 열심히 할게요!</p>
-									</div>
+                                        <script>document.write(timeline_0001_title);</script>
+                                    </div>
+                                    <div class="timeline__event__description">
+                                        <p><script>document.write(timeline_0001_content);</script></p>
+                                    </div>
 								</div>
 							</div>
 						</div>
@@ -235,7 +183,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>우이하루 프로젝트는 MIT 라이선스에요! <a href="https://github.com/gaon12/uiharu" target="_blank"><i class="fab fa-github-alt"></i> 깃허브 저장소</a>를 확인하세요!</span>
+                            <span><script>document.write(footer_first);</script> <a href="https://github.com/gaon12/uiharu" target="_blank"><i class="fab fa-github-alt"></i> <script>document.write(footer_second);</script></a><script>document.write(footer_third);</script></span>
                         </div>
                     </div>
                 </footer>
